@@ -1,6 +1,6 @@
 # Sockit
 
-Transparent SOCKS 5 support for TCPSockets
+Transparent SOCKS 5 support for TCPSocket
 
 ## Installation
 
@@ -26,36 +26,36 @@ You can configure on the singleton class or an instance of the class.  The SOCKS
 
 The defaults are as follows:
 
-    TCPSocket.socks do |config|
-      config.version = 5
-      config.ignore = ["127.0.0.1"]
-      config.debug = false
+    TCPSocket.socks do |socks|
+      socks.version = 5
+      socks.ignore = ["127.0.0.1"]
+      socks.debug = false
     end
 
 Specify your SOCKS server and port:
 
-    TCPSocket.socks do |config|
-      config.host = "127.0.0.1"
-      config.port = "1080"
+    TCPSocket.socks do |socks|
+      socks.host = "127.0.0.1"
+      socks.port = "1080"
     end
 
 If you want to use username/password authentication:
 
-    TCPSocket.socks do |config|
-      config.username = "username"
-      config.password = "password"
+    TCPSocket.socks do |socks|
+      socks.username = "username"
+      socks.password = "password"
     end
 
 Turn on debug output:
 
-    TCPSocket.socks do |config|
-      config.debug = true
+    TCPSocket.socks do |socks|
+      socks.debug = true
     end
 
 Ignore some more hosts:
 
-    TCPSocket.socks do |config|
-      config.ignore << "192.168.0.1"
+    TCPSocket.socks do |socks|
+      socks.ignore << "192.168.0.1"
     end
 
 
