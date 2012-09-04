@@ -136,7 +136,7 @@ class TCPSocket
 
   alias :initialize_tcp :initialize
   def initialize(remote_host, remote_port, local_host=nil, local_port=nil)
-    if (socks.host && socks.port && !socks.ignore.include?(remote_host))
+    if (socks.host && socks.port && !socks.ignore.flatten.include?(remote_host))
       Sockit.debug(:yellow, "Connecting to SOCKS server #{socks.host}:#{socks.port}")
       initialize_tcp(socks.host, socks.port)
       (socks.version.to_i == 5) and socks_authenticate
