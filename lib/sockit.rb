@@ -139,7 +139,6 @@ class TCPSocket
     if (socks.host && socks.port && !socks.ignore.include?(remote_host))
       Sockit.debug(:yellow, "Connecting to SOCKS server #{socks.host}:#{socks.port}")
       initialize_tcp(socks.host, socks.port)
-
       (socks.version.to_i == 5) and socks_authenticate
       socks.host and socks_connect(remote_host, remote_port)
       Sockit.debug(:green, "Connected to #{remote_host}:#{remote_port} via SOCKS server #{socks.host}:#{socks.port}")
