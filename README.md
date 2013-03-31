@@ -83,7 +83,7 @@ Documentation:
 
 # LICENSE
 
-SOCKIT - Zachary's (DevOp) Tool Kit
+SOCKIT - Transparent SOCKS 5 support for TCPSocket
 
 * Author: Zachary Patten <zachary@jovelabs.net>
 * Copyright: Copyright (c) Zachary Patten
