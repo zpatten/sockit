@@ -1,0 +1,889 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: TCPSocket
+  
+    &mdash; Documentation by YARD 0.8.2.1
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (T)</a> &raquo;
+    
+    
+    <span class="title">TCPSocket</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: TCPSocket
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">TCPSocket</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/sockit.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#socks-class_method" title="socks (class method)">+ (Object) <strong>socks</strong>(&amp;block) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (TCPSocket) <strong>initialize</strong>(remote_host, remote_port, local_host = nil, local_port = nil) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A new instance of TCPSocket.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize_tcp-instance_method" title="#initialize_tcp (instance method)">- (Object) <strong>initialize_tcp</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#socks-instance_method" title="#socks (instance method)">- (Object) <strong>socks</strong>(&amp;block) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#socks_authenticate-instance_method" title="#socks_authenticate (instance method)">- (Object) <strong>socks_authenticate</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#socks_connect-instance_method" title="#socks_connect (instance method)">- (Object) <strong>socks_connect</strong>(remote_host, remote_port) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="TCPSocket (class)">TCPSocket</a></span></tt>) <strong>initialize</strong>(remote_host, remote_port, local_host = nil, local_port = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>A new instance of TCPSocket</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sockit.rb', line 158</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_remote_host'>remote_host</span><span class='comma'>,</span> <span class='id identifier rubyid_remote_port'>remote_port</span><span class='comma'>,</span> <span class='id identifier rubyid_local_host'>local_host</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_local_port'>local_port</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_port'>port</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_ignore'>ignore</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_remote_host'>remote_host</span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span><span class='lparen'>(</span><span class='symbol'>:yellow</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Connecting to SOCKS server </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span><span class='rbrace'>}</span><span class='tstring_content'>:</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_port'>port</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_initialize_tcp'>initialize_tcp</span><span class='lparen'>(</span><span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span><span class='comma'>,</span> <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_port'>port</span><span class='rparen'>)</span>
+    <span class='lparen'>(</span><span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_version'>version</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='op'>==</span> <span class='int'>5</span><span class='rparen'>)</span> <span class='kw'>and</span> <span class='id identifier rubyid_socks_authenticate'>socks_authenticate</span>
+    <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span> <span class='kw'>and</span> <span class='id identifier rubyid_socks_connect'>socks_connect</span><span class='lparen'>(</span><span class='id identifier rubyid_remote_host'>remote_host</span><span class='comma'>,</span> <span class='id identifier rubyid_remote_port'>remote_port</span><span class='rparen'>)</span>
+    <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span><span class='lparen'>(</span><span class='symbol'>:green</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Connected to </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_remote_host'>remote_host</span><span class='rbrace'>}</span><span class='tstring_content'>:</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_remote_port'>remote_port</span><span class='rbrace'>}</span><span class='tstring_content'> via SOCKS server </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span><span class='rbrace'>}</span><span class='tstring_content'>:</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_port'>port</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span><span class='lparen'>(</span><span class='symbol'>:yellow</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Directly connecting to </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_remote_host'>remote_host</span><span class='rbrace'>}</span><span class='tstring_content'>:</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_remote_port'>remote_port</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_initialize_tcp'>initialize_tcp</span><span class='lparen'>(</span><span class='id identifier rubyid_remote_host'>remote_host</span><span class='comma'>,</span> <span class='id identifier rubyid_remote_port'>remote_port</span><span class='comma'>,</span> <span class='id identifier rubyid_local_host'>local_host</span><span class='comma'>,</span> <span class='id identifier rubyid_local_port'>local_port</span><span class='rparen'>)</span>
+    <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span><span class='lparen'>(</span><span class='symbol'>:green</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Connected to </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_remote_host'>remote_host</span><span class='rbrace'>}</span><span class='tstring_content'>:</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_remote_port'>remote_port</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="socks-class_method">
+  
+    + (<tt>Object</tt>) <strong>socks</strong>(&amp;block) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+137
+138
+139
+140
+141
+142
+143
+144</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sockit.rb', line 137</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_socks'>socks</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='cvar'>@@socks</span> <span class='op'>||=</span> <span class='const'>OpenStruct</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Sockit</span><span class='op'>::</span><span class='const'>DEFAULT_CONFIG</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_block_given?'>block_given?</span>
+    <span class='kw'>yield</span><span class='lparen'>(</span><span class='cvar'>@@socks</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='cvar'>@@socks</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="initialize_tcp-instance_method">
+  
+    - (<tt>Object</tt>) <strong>initialize_tcp</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+157</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sockit.rb', line 157</span>
+
+<span class='kw'>alias</span> <span class='symbol'>:initialize_tcp</span> <span class='symbol'>:initialize</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="socks-instance_method">
+  
+    - (<tt>Object</tt>) <strong>socks</strong>(&amp;block) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+148
+149
+150
+151
+152
+153
+154
+155</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sockit.rb', line 148</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_socks'>socks</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='cvar'>@@socks</span> <span class='op'>||=</span> <span class='const'>OpenStruct</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Sockit</span><span class='op'>::</span><span class='const'>DEFAULT_CONFIG</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_block_given?'>block_given?</span>
+    <span class='kw'>yield</span><span class='lparen'>(</span><span class='cvar'>@@socks</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='cvar'>@@socks</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="socks_authenticate-instance_method">
+  
+    - (<tt>Object</tt>) <strong>socks_authenticate</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sockit.rb', line 172</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_socks_authenticate'>socks_authenticate</span>
+  <span class='comment'># The authentication methods supported are numbered as follows:
+</span>  <span class='comment'># 0x00: No authentication
+</span>  <span class='comment'># 0x01: GSSAPI[10]
+</span>  <span class='comment'># 0x02: Username/Password[11]
+</span>  <span class='comment'># 0x03-0x7F: methods assigned by IANA[12]
+</span>  <span class='comment'># 0x80-0xFE: methods reserved for private use
+</span>
+  <span class='comment'># The initial greeting from the client is
+</span>  <span class='comment'># field 1: SOCKS version number (must be 0x05 for this version)
+</span>  <span class='comment'># field 2: number of authentication methods supported, 1 byte
+</span>  <span class='comment'># field 3: authentication methods, variable length, 1 byte per method supported
+</span>  <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_username'>username</span> <span class='op'>||</span> <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_password'>password</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='const'>Array</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>&lt;&lt;</span> <span class='lbracket'>[</span><span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_version'>version</span><span class='comma'>,</span> <span class='int'>0x02</span><span class='comma'>,</span> <span class='int'>0x02</span><span class='comma'>,</span> <span class='int'>0x00</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span>
+
+    <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='kw'>and</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span><span class='lparen'>(</span><span class='symbol'>:yellow</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Requesting username/password authentication</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='kw'>and</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_dump'>dump</span><span class='lparen'>(</span><span class='symbol'>:write</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='const'>Array</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>&lt;&lt;</span> <span class='lbracket'>[</span><span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_version'>version</span><span class='comma'>,</span> <span class='int'>0x01</span><span class='comma'>,</span> <span class='int'>0x00</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span>
+
+    <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='kw'>and</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span><span class='lparen'>(</span><span class='symbol'>:yellow</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Requesting no authentication</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='kw'>and</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_dump'>dump</span><span class='lparen'>(</span><span class='symbol'>:write</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># The server's choice is communicated:
+</span>  <span class='comment'># field 1: SOCKS version, 1 byte (0x05 for this version)
+</span>  <span class='comment'># field 2: chosen authentication method, 1 byte, or 0xFF if no acceptable methods were offered
+</span>  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='kw'>and</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span><span class='lparen'>(</span><span class='symbol'>:yellow</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Waiting for SOCKS authentication reply</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_auth_reply'>auth_reply</span> <span class='op'>=</span> <span class='id identifier rubyid_recv'>recv</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_unpack'>unpack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='kw'>and</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_dump'>dump</span><span class='lparen'>(</span><span class='symbol'>:read</span><span class='comma'>,</span> <span class='id identifier rubyid_auth_reply'>auth_reply</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_server_socks_version'>server_socks_version</span> <span class='op'>=</span> <span class='id identifier rubyid_auth_reply'>auth_reply</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_server_auth_method'>server_auth_method</span> <span class='op'>=</span> <span class='id identifier rubyid_auth_reply'>auth_reply</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_server_socks_version'>server_socks_version</span> <span class='op'>!=</span> <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_version'>version</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>SockitError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SOCKS server does not support version </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_version'>version</span><span class='rbrace'>}</span><span class='tstring_content'>!</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_server_auth_method'>server_auth_method</span> <span class='op'>==</span> <span class='int'>0xFF</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>SockitError</span><span class='comma'>,</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_authentication_method'>authentication_method</span><span class='lparen'>(</span><span class='id identifier rubyid_server_auth_method'>server_auth_method</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='kw'>and</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span><span class='lparen'>(</span><span class='symbol'>:green</span><span class='comma'>,</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_authentication_method'>authentication_method</span><span class='lparen'>(</span><span class='id identifier rubyid_server_auth_method'>server_auth_method</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># The subsequent authentication is method-dependent. Username and password authentication (method 0x02) is described in RFC 1929:
+</span>  <span class='kw'>case</span> <span class='id identifier rubyid_server_auth_method'>server_auth_method</span>
+  <span class='kw'>when</span> <span class='int'>0x00</span> <span class='kw'>then</span>
+    <span class='comment'># No authentication
+</span>  <span class='kw'>when</span> <span class='int'>0x01</span> <span class='kw'>then</span>
+    <span class='comment'># GSSAPI
+</span>    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>SockitError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Authentication method GSSAPI not implemented</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>when</span> <span class='int'>0x02</span> <span class='kw'>then</span>
+    <span class='comment'># For username/password authentication the client's authentication request is
+</span>    <span class='comment'># field 1: version number, 1 byte (must be 0x01)
+</span>    <span class='comment'># field 2: username length, 1 byte
+</span>    <span class='comment'># field 3: username
+</span>    <span class='comment'># field 4: password length, 1 byte
+</span>    <span class='comment'># field 5: password
+</span>    <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='const'>Array</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>&lt;&lt;</span> <span class='lbracket'>[</span><span class='int'>0x01</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>&lt;&lt;</span> <span class='lbracket'>[</span><span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_username'>username</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_username'>username</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>&lt;&lt;</span> <span class='lbracket'>[</span><span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_password'>password</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_password'>password</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span>
+
+    <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='kw'>and</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span><span class='lparen'>(</span><span class='symbol'>:yellow</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Sending username and password</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='kw'>and</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_dump'>dump</span><span class='lparen'>(</span><span class='symbol'>:write</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+
+    <span class='comment'># Server response for username/password authentication:
+</span>    <span class='comment'># field 1: version, 1 byte
+</span>    <span class='comment'># field 2: status code, 1 byte.
+</span>    <span class='comment'># 0x00 = success
+</span>    <span class='comment'># any other value = failure, connection must be closed
+</span>    <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='kw'>and</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span><span class='lparen'>(</span><span class='symbol'>:yellow</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Waiting for SOCKS authentication reply</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_auth_reply'>auth_reply</span> <span class='op'>=</span> <span class='id identifier rubyid_recv'>recv</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_unpack'>unpack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='kw'>and</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_dump'>dump</span><span class='lparen'>(</span><span class='symbol'>:read</span><span class='comma'>,</span> <span class='id identifier rubyid_auth_reply'>auth_reply</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_version'>version</span> <span class='op'>=</span> <span class='id identifier rubyid_auth_reply'>auth_reply</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_status_code'>status_code</span> <span class='op'>=</span> <span class='id identifier rubyid_auth_reply'>auth_reply</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+
+    <span class='kw'>if</span> <span class='id identifier rubyid_status_code'>status_code</span> <span class='op'>==</span> <span class='int'>0x00</span>
+      <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='kw'>and</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span><span class='lparen'>(</span><span class='symbol'>:green</span><span class='comma'>,</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_authentication_status'>authentication_status</span><span class='lparen'>(</span><span class='id identifier rubyid_status_code'>status_code</span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='const'>SockitError</span><span class='comma'>,</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_authentication_status'>authentication_status</span><span class='lparen'>(</span><span class='id identifier rubyid_status_code'>status_code</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="socks_connect-instance_method">
+  
+    - (<tt>Object</tt>) <strong>socks_connect</strong>(remote_host, remote_port) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sockit.rb', line 267</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_socks_connect'>socks_connect</span><span class='lparen'>(</span><span class='id identifier rubyid_remote_host'>remote_host</span><span class='comma'>,</span> <span class='id identifier rubyid_remote_port'>remote_port</span><span class='rparen'>)</span>
+  <span class='comment'># The client's connection request is
+</span>  <span class='comment'># field 1: SOCKS version number, 1 byte (must be 0x05 for this version)
+</span>  <span class='comment'># field 2: command code, 1 byte:
+</span>  <span class='comment'># 0x01 = establish a TCP/IP stream connection
+</span>  <span class='comment'># 0x02 = establish a TCP/IP port binding
+</span>  <span class='comment'># 0x03 = associate a UDP port
+</span>  <span class='comment'># field 3: reserved, must be 0x00
+</span>  <span class='comment'># field 4: address type, 1 byte:
+</span>  <span class='comment'># 0x01 = IPv4 address
+</span>  <span class='comment'># 0x03 = Domain name
+</span>  <span class='comment'># 0x04 = IPv6 address
+</span>  <span class='comment'># field 5: destination address of
+</span>  <span class='comment'># 4 bytes for IPv4 address
+</span>  <span class='comment'># 1 byte of name length followed by the name for Domain name
+</span>  <span class='comment'># 16 bytes for IPv6 address
+</span>  <span class='comment'># field 6: port number in a network byte order, 2 bytes
+</span>  <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='const'>Array</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='id identifier rubyid_data'>data</span> <span class='op'>&lt;&lt;</span> <span class='lbracket'>[</span> <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_version'>version</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='comma'>,</span> <span class='int'>0x01</span><span class='comma'>,</span> <span class='int'>0x00</span> <span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+
+  <span class='comment'># when doing proxy mode on SS5; we seemingly need to resolve all names first.
+</span>  <span class='kw'>if</span> <span class='id identifier rubyid_remote_host'>remote_host</span> <span class='op'>!~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^(\d+)\.(\d+)\.(\d+)\.(\d+)$</span><span class='regexp_end'>/</span></span>
+    <span class='id identifier rubyid_remote_host'>remote_host</span> <span class='op'>=</span> <span class='const'>Resolv</span><span class='op'>::</span><span class='const'>DNS</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_getaddress'>getaddress</span><span class='lparen'>(</span><span class='id identifier rubyid_remote_host'>remote_host</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_remote_host'>remote_host</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^(\d+)\.(\d+)\.(\d+)\.(\d+)$</span><span class='regexp_end'>/</span></span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>&lt;&lt;</span> <span class='lbracket'>[</span><span class='int'>0x01</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>&lt;&lt;</span> <span class='lbracket'>[</span><span class='backref'>$1</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='comma'>,</span> <span class='backref'>$2</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='comma'>,</span> <span class='backref'>$3</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='comma'>,</span> <span class='backref'>$4</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_remote_host'>remote_host</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^[:0-9a-f]+$</span><span class='regexp_end'>/</span></span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>&lt;&lt;</span> <span class='lbracket'>[</span><span class='int'>0x04</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>&lt;&lt;</span> <span class='lbracket'>[</span><span class='backref'>$1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>&lt;&lt;</span> <span class='lbracket'>[</span><span class='int'>0x03</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>&lt;&lt;</span> <span class='lbracket'>[</span><span class='id identifier rubyid_remote_host'>remote_host</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_remote_host'>remote_host</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_data'>data</span> <span class='op'>&lt;&lt;</span> <span class='lbracket'>[</span><span class='id identifier rubyid_remote_port'>remote_port</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span>
+
+  <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span><span class='lparen'>(</span><span class='symbol'>:yellow</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Requesting SOCKS connection to </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_remote_host'>remote_host</span><span class='rbrace'>}</span><span class='tstring_content'>:</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_remote_port'>remote_port</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='kw'>and</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_dump'>dump</span><span class='lparen'>(</span><span class='symbol'>:write</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+
+  <span class='comment'># Server response:
+</span>  <span class='comment'># field 1: SOCKS protocol version, 1 byte (0x05 for this version)
+</span>  <span class='comment'># field 2: status, 1 byte:
+</span>  <span class='comment'># 0x00 = request granted
+</span>  <span class='comment'># 0x01 = general failure
+</span>  <span class='comment'># 0x02 = connection not allowed by ruleset
+</span>  <span class='comment'># 0x03 = network unreachable
+</span>  <span class='comment'># 0x04 = host unreachable
+</span>  <span class='comment'># 0x05 = connection refused by destination host
+</span>  <span class='comment'># 0x06 = TTL expired
+</span>  <span class='comment'># 0x07 = command not supported / protocol error
+</span>  <span class='comment'># 0x08 = address type not supported
+</span>  <span class='comment'># field 3: reserved, must be 0x00
+</span>  <span class='comment'># field 4: address type, 1 byte:
+</span>  <span class='comment'># 0x01 = IPv4 address
+</span>  <span class='comment'># 0x03 = Domain name
+</span>  <span class='comment'># 0x04 = IPv6 address
+</span>  <span class='comment'># field 5: destination address of
+</span>  <span class='comment'># 4 bytes for IPv4 address
+</span>  <span class='comment'># 1 byte of name length followed by the name for Domain name
+</span>  <span class='comment'># 16 bytes for IPv6 address
+</span>  <span class='comment'># field 6: network byte order port number, 2 bytes
+</span>  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='kw'>and</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span><span class='lparen'>(</span><span class='symbol'>:yellow</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Waiting for SOCKS connection reply</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_packet'>packet</span> <span class='op'>=</span> <span class='id identifier rubyid_recv'>recv</span><span class='lparen'>(</span><span class='int'>4</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_unpack'>unpack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='kw'>and</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_dump'>dump</span><span class='lparen'>(</span><span class='symbol'>:read</span><span class='comma'>,</span> <span class='id identifier rubyid_packet'>packet</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_socks_version'>socks_version</span> <span class='op'>=</span> <span class='id identifier rubyid_packet'>packet</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_status_code'>status_code</span> <span class='op'>=</span> <span class='id identifier rubyid_packet'>packet</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_reserved'>reserved</span> <span class='op'>=</span> <span class='id identifier rubyid_packet'>packet</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_address_type'>address_type</span> <span class='op'>=</span> <span class='id identifier rubyid_packet'>packet</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_status_code'>status_code</span> <span class='op'>==</span> <span class='int'>0x00</span>
+    <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='kw'>and</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span><span class='lparen'>(</span><span class='symbol'>:green</span><span class='comma'>,</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_status_message'>status_message</span><span class='lparen'>(</span><span class='id identifier rubyid_status_code'>status_code</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>SockitError</span><span class='comma'>,</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_status_message'>status_message</span><span class='lparen'>(</span><span class='id identifier rubyid_status_code'>status_code</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_address_length'>address_length</span> <span class='op'>=</span> <span class='kw'>case</span> <span class='id identifier rubyid_address_type'>address_type</span>
+  <span class='kw'>when</span> <span class='int'>0x01</span> <span class='kw'>then</span>
+    <span class='int'>4</span>
+  <span class='kw'>when</span> <span class='int'>0x03</span> <span class='kw'>then</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='id identifier rubyid_recv'>recv</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_unpack'>unpack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='kw'>and</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_dump'>dump</span><span class='lparen'>(</span><span class='symbol'>:read</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_data'>data</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+  <span class='kw'>when</span> <span class='int'>0x04</span> <span class='kw'>then</span>
+    <span class='int'>16</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_address'>address</span> <span class='op'>=</span> <span class='id identifier rubyid_recv'>recv</span><span class='lparen'>(</span><span class='id identifier rubyid_address_length'>address_length</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_unpack'>unpack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='kw'>and</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_dump'>dump</span><span class='lparen'>(</span><span class='symbol'>:read</span><span class='comma'>,</span> <span class='id identifier rubyid_address'>address</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_port'>port</span> <span class='op'>=</span> <span class='id identifier rubyid_recv'>recv</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_unpack'>unpack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='kw'>and</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_dump'>dump</span><span class='lparen'>(</span><span class='symbol'>:read</span><span class='comma'>,</span> <span class='id identifier rubyid_port'>port</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='kw'>and</span> <span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span><span class='lparen'>(</span><span class='symbol'>:green</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='id identifier rubyid_address'>address</span><span class='comma'>,</span> <span class='id identifier rubyid_port'>port</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Sun Mar 31 00:17:06 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.2.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

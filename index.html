@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.8.2.1
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'><p><a href="http://travis-ci.org/zpatten/sockit"><img src="https://secure.travis-ci.org/zpatten/sockit.png" alt="Build Status"></a>
+<a href="https://gemnasium.com/zpatten/sockit"><img src="https://gemnasium.com/zpatten/sockit.png" alt="Dependency Status"></a>
+<a href="https://codeclimate.com/github/zpatten/sockit"><img src="https://codeclimate.com/github/zpatten/sockit.png" alt="Code Climate"></a></p>
+
+<h1>SOCKIT</h1>
+
+<p>Transparent SOCKS 5 support for TCPSocket</p>
+
+<h2>INSTALLATION</h2>
+
+<p>Add this line to your application&#39;s Gemfile:</p>
+
+<pre class="code ruby"><code><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>sockit</span><span class='tstring_end'>'</span></span>
+</code></pre>
+
+<p>And then execute:</p>
+
+<pre class="code ruby"><code>$ bundle
+</code></pre>
+
+<p>Or install it yourself as:</p>
+
+<pre class="code ruby"><code>$ gem install sockit
+</code></pre>
+
+<h2>USAGE</h2>
+
+<p>By loading the gem TCPSocket will get monkey patched adding seamless transparent SOCKS proxy support.  I favor using SS5 for a SOCKS server, so at this point I&#39;m uncertain of absolute compatibility with other SOCKS servers.  I&#39;m following the RFC here; so if (insert other SOCKS server flavor here) follows the RFC everything is in theory compatible.</p>
+
+<h3>CONFIGURATION</h3>
+
+<p>You can configure on the singleton class or an instance of the class.  The SOCKS configuration is stored in a class variable; so it is shared across all TCPSocket instances and the singleton, thus changing the configuration in one instance will also affect all other instances.  The configuration is stored in an OpenStruct; you can reference <code>socks</code> with a block as shown, where the configuration OpenStruct is yielded to the block; or without in which case the configuration OpenStruct itself is returned.</p>
+
+<p>The defaults are as follows:</p>
+
+<pre class="code ruby"><code><span class='const'>TCPSocket</span><span class='period'>.</span><span class='id identifier rubyid_socks'>socks</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_socks'>socks</span><span class='op'>|</span>
+  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_version'>version</span> <span class='op'>=</span> <span class='int'>5</span>
+  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_ignore'>ignore</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>127.0.0.1</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='op'>=</span> <span class='kw'>false</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>Specify your SOCKS server and port:</p>
+
+<pre class="code ruby"><code><span class='const'>TCPSocket</span><span class='period'>.</span><span class='id identifier rubyid_socks'>socks</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_socks'>socks</span><span class='op'>|</span>
+  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>127.0.0.1</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_port'>port</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1080</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>If you want to use username/password authentication:</p>
+
+<pre class="code ruby"><code><span class='const'>TCPSocket</span><span class='period'>.</span><span class='id identifier rubyid_socks'>socks</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_socks'>socks</span><span class='op'>|</span>
+  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_username'>username</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>username</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_password'>password</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>password</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>Turn on debug output:</p>
+
+<pre class="code ruby"><code><span class='const'>TCPSocket</span><span class='period'>.</span><span class='id identifier rubyid_socks'>socks</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_socks'>socks</span><span class='op'>|</span>
+  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='op'>=</span> <span class='kw'>true</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>Ignore some more hosts:</p>
+
+<pre class="code ruby"><code><span class='const'>TCPSocket</span><span class='period'>.</span><span class='id identifier rubyid_socks'>socks</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_socks'>socks</span><span class='op'>|</span>
+  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_ignore'>ignore</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>192.168.0.1</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span>
+</code></pre>
+
+<h2>CONTRIBUTING</h2>
+
+<p>I await your pull request.</p>
+
+<h1>RESOURCES</h1>
+
+<p>Source:</p>
+
+<ul>
+<li><a href="https://github.com/zpatten/sockit">https://github.com/zpatten/sockit</a></li>
+</ul>
+
+<p>Issues:</p>
+
+<ul>
+<li><a href="https://github.com/zpatten/sockit/issues">https://github.com/zpatten/sockit/issues</a></li>
+</ul>
+
+<p>Documentation:</p>
+
+<ul>
+<li><a href="http://zpatten.github.com/sockit/">http://zpatten.github.com/sockit/</a></li>
+</ul>
+
+<h1>LICENSE</h1>
+
+<p>SOCKIT - Zachary&#39;s (DevOp) Tool Kit</p>
+
+<ul>
+<li>Author: Zachary Patten <a href="mailto:zachary@jovelabs.net">zachary@jovelabs.net</a></li>
+<li>Copyright: Copyright (c) Zachary Patten</li>
+<li>License: Apache License, Version 2.0</li>
+</ul>
+
+<p>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at</p>
+
+<pre class="code ruby"><code><span class='id identifier rubyid_http'>http</span><span class='symbol'>:/</span><span class='op'>/</span><span class='id identifier rubyid_www'>www</span><span class='period'>.</span><span class='id identifier rubyid_apache'>apache</span><span class='period'>.</span><span class='id identifier rubyid_org'>org</span><span class='op'>/</span><span class='id identifier rubyid_licenses'>licenses</span><span class='op'>/</span><span class='const'>LICENSE</span><span class='op'>-</span><span class='float'>2.0</span>
+</code></pre>
+
+<p>Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.</p>
+</div></div>
+
+    <div id="footer">
+  Generated on Sun Mar 31 00:17:06 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.2.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>
