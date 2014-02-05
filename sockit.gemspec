@@ -21,22 +21,23 @@
 # -*- encoding: utf-8 -*-
 require File.expand_path('../lib/sockit/version', __FILE__)
 
-Gem::Specification.new do |gem|
-  gem.authors       = ["Zachary Patten"]
-  gem.email         = ["zachary@jovelabs.com"]
-  gem.description   = %q{Transparent SOCKS 5 support for TCPSocket}
-  gem.summary       = %q{Transparent SOCKS 5 support for TCPSocket}
-  gem.homepage      = "https://github.com/zpatten/sockit"
+Gem::Specification.new do |spec|
+  spec.name          = "sockit"
+  spec.version       = Sockit::VERSION
+  spec.authors       = ["Zachary Patten"]
+  spec.email         = ["zachary@jovelabs.com"]
+  spec.description   = %(Transparent SOCKS 5 support for TCPSocket)
+  spec.summary       = %(Transparent SOCKS 5 support for TCPSocket)
+  spec.homepage      = %(https://github.com/zpatten/sockit)
+  spec.license       = "Apache 2.0"
 
-  gem.files         = `git ls-files`.split($\)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.name          = "sockit"
-  gem.require_paths = ["lib"]
-  gem.version       = Sockit::VERSION
+  spec.files         = `git ls-files`.split($/)
+  spec.executables   = spec.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.require_paths = ["lib"]
 
-  gem.add_development_dependency("pry")
-  gem.add_development_dependency("rspec")
-  gem.add_development_dependency("yard")
-  gem.add_development_dependency("redcarpet")
+  spec.add_development_dependency("pry")
+  spec.add_development_dependency("rspec")
+  spec.add_development_dependency("yard")
+  spec.add_development_dependency("redcarpet")
 end
