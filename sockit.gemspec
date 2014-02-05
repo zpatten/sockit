@@ -36,8 +36,15 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
+
   spec.add_development_dependency("pry")
+  spec.add_development_dependency("rake")
   spec.add_development_dependency("rspec")
   spec.add_development_dependency("yard")
   spec.add_development_dependency("redcarpet")
+
+  spec.add_development_dependency("travis")
+  spec.add_development_dependency("travis-artifacts")
+  spec.add_development_dependency("typhoeus", "~> 0.6.7")
+  spec.add_development_dependency("websocket-native")
 end
