@@ -9,8 +9,8 @@ rvm:
 branches:
   only:
   - master
-before_script:
-- "sudo ./bin/setup-travis-ci.sh"
+before_install:
+- "sudo ./spec/support/before_install.sh"
 notifications:
   irc:
     channels:
