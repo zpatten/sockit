@@ -3,7 +3,7 @@ module Sockit
 
     def direct_connect(socket, remote_host, remote_port, local_host=nil, local_port=nil)
       log(:yellow, "Directly connecting to #{remote_host}:#{remote_port}")
-      socket.initialize_tcp(remote_host, remote_port, local_host, local_port)
+      socket.__send__(:initialize_tcp, remote_host, remote_port, local_host=nil, local_port=nil)
       log(:green, "Connected to #{remote_host}:#{remote_port}")
     end
 

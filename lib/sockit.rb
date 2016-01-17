@@ -78,7 +78,7 @@ class TCPSocket
       (Sockit.config.version.to_i == 5) and Sockit.authenticate(self)
       Sockit.config.host and Sockit.connect(self, remote_host, remote_port)
     else
-      Sockit.direct_connection(self, remote_host, remote_port, local_host, local_port)
+      Sockit.direct_connect(self, remote_host, remote_port, local_host, local_port)
     end
   end
 
