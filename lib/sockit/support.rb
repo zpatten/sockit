@@ -1,20 +1,32 @@
 module Sockit
-  module Core
+  module Support
 
-    def debug(color, message)
+    def configured?
+      (config.host && config.port && config.version)
+    end
+
+    def connect_via_socks?(host)
+      (configured? && !config.ignore.flatten.include?(host))
+    end
+
+    def log(color, message)
+      return if !config.debug
+
       timestamp = Time.now.utc
       puts("%s%s.%06d %s%s" % [COLORS[color], timestamp.strftime("%Y-%m-%d|%H:%M:%S"), timestamp.usec, message, COLORS[:reset]])
     end
 
     def dump(action, data)
+      return if !config.debug
+
       bytes = Array.new
       chars = Array.new
       for x in 0..(data.length - 1) do
         bytes << ("%03d" % data[x].ord)
         chars << ("%03s" % (data[x] =~ /^\w+$/ ? data[x].chr : "..."))
       end
-      debug(:red, "#{action.to_s.upcase}: #{bytes.join(" ")}#{COLORS[:reset]}")
-      debug(:red, "#{action.to_s.upcase}: #{chars.join(" ")}#{COLORS[:reset]}")
+      log(:blue, "#{action.to_s.upcase}: #{bytes.join(" ")}#{COLORS[:reset]}")
+      log(:blue, "#{action.to_s.upcase}: #{chars.join(" ")}#{COLORS[:reset]}")
     end
 
     # 0x00 = request granted
@@ -49,6 +61,9 @@ module Sockit
       else
         "Unknown (Code: 0x%02X)" % status_code
       end
+
+    rescue
+      "Status Code: #{status_code.inspect}"
     end
 
     # The authentication methods supported are numbered as follows:
@@ -66,13 +81,13 @@ module Sockit
       when 0x02 then
         "Username/Password authentication (Code: 0x%02X)" % auth_method
       when 0x03..0x7F then
-        "Method assigned by IANA (Code: 0x%02X)" % auth_method
+        "Authentication method assigned by IANA (Code: 0x%02X)" % auth_method
       when 0x80..0xFE then
-        "Method reserved for private use (Code: 0x%02X)" % auth_method
+        "Authentication method reserved for private use (Code: 0x%02X)" % auth_method
       when 0xFF then
-        "Unsupported (Code: 0x%02X)" % auth_method
+        "Unsupported authentication (Code: 0x%02X)" % auth_method
       else
-        "Unknown (Code: 0x%02X)" % auth_method
+        "Unknown authentication (Code: 0x%02X)" % auth_method
       end
     end
 
