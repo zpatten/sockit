@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -x
+set -ex
 
 sudo apt-get -qy update
 sudo apt-get -qy install wget build-essential libpam0g-dev libbsd-dev libbsd0 libbsd0-dbg libssl-dev libldap2-dev
