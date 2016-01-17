@@ -81,6 +81,4 @@ class TCPSocket
       Sockit.direct_connect(self, remote_host, remote_port, local_host, local_port)
     end
   end
-
-  extend Sockit::Authentication
 end
