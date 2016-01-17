@@ -19,4 +19,4 @@ EOF
 
 sudo /usr/sbin/ss5 -t
 
-nc 127.0.0.1 1080 -w
+nc -w 3 127.0.0.1 1080
