@@ -8,4 +8,5 @@ wget http://sourceforge.net/projects/ss5/files/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz/do
 tar -zxvf ss5-3.8.9.tar.gz
 cd ss5-3.8.9
 ./configure
-make
+make install
+sudo service ss5 start
