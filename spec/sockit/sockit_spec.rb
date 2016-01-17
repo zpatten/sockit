@@ -80,6 +80,8 @@ describe TCPSocket do
       end
 
       it "should allow a socks 5 connection to github (debug/no auth)" do
+        $stdout = File.open('/dev/null', 'w')
+
         Sockit.config do |config|
           config.debug = true
           config.version = 5
@@ -110,6 +112,8 @@ describe TCPSocket do
       end
 
       it "should allow a socks 5 connection to github (debug/auth)" do
+        $stdout = File.open('/dev/null', 'w')
+
         Sockit.config do |config|
           config.debug = true
           config.version = 5
