@@ -18,12 +18,14 @@
 #
 ################################################################################
 
-require "socket"
-require "resolv"
-require "ostruct"
+require 'socket'
+require 'resolv'
+require 'ostruct'
 
-require "sockit/version"
-require "sockit/core"
+require 'sockit/version'
+require 'sockit/authentication'
+require 'sockit/connect'
+require 'sockit/support'
 
 class SockitError < RuntimeError; end
 

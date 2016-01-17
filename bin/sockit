@@ -19,8 +19,9 @@
 #
 ################################################################################
 
-require "pry"
-require "sockit"
+require 'bundler/setup'
+require 'pry'
+require 'sockit'
 
 ##
 #
