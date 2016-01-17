@@ -44,9 +44,9 @@ end
 
 describe TCPSocket do
 
-  describe "instance" do
+  describe "connections" do
 
-    describe "methods" do
+    describe "direct" do
 
       it "should allow a direct connection to github" do
         Sockit.config do |config|
@@ -60,11 +60,63 @@ describe TCPSocket do
         expect(data).to match(/SSH/)
       end
 
-      it "should allow a SOCKS connection to github" do
+    end
+
+    describe "socks" do
+
+      it "should allow a socks 5 connection to github (no debug/no auth)" do
         Sockit.config do |config|
+          config.debug = false
           config.version = 5
           config.host = "127.0.0.1"
           config.port = "1080"
+          config.username = nil
+          config.password = nil
+        end
+
+        socket = TCPSocket.new('github.com', '22')
+        data = socket.gets
+        expect(data).to match(/SSH/)
+      end
+
+      it "should allow a socks 5 connection to github (debug/no auth)" do
+        Sockit.config do |config|
+          config.debug = true
+          config.version = 5
+          config.host = "127.0.0.1"
+          config.port = "1080"
+          config.username = nil
+          config.password = nil
+        end
+
+        socket = TCPSocket.new('github.com', '22')
+        data = socket.gets
+        expect(data).to match(/SSH/)
+      end
+
+      it "should allow a socks 5 connection to github (no debug/auth)" do
+        Sockit.config do |config|
+          config.debug = false
+          config.version = 5
+          config.host = "127.0.0.1"
+          config.port = "1080"
+          config.username = "root"
+          config.password = "none"
+        end
+
+        socket = TCPSocket.new('github.com', '22')
+        data = socket.gets
+        expect(data).to match(/SSH/)
+      end
+
+      it "should allow a socks 5 connection to github (debug/auth)" do
+        Sockit.config do |config|
+          config.debug = true
+          config.version = 5
+          config.host = "127.0.0.1"
+          config.port = "1080"
+          config.username = "root"
+          config.password = "none"
         end
 
         socket = TCPSocket.new('github.com', '22')
@@ -77,18 +129,3 @@ describe TCPSocket do
   end
 
 end
-
-
-
-# require 'bundler/setup'
-# require 'sockit'
-
-# Sockit.config do |config|
-#   config.version = 5
-#   config.debug = true
-#   config.host = "127.0.0.1"
-#   config.port = "1080"
-# end
-
-# socket = TCPSocket.new('www.google.com', '80')
-# puts socket.read.inspect
