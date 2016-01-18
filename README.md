@@ -87,7 +87,7 @@ Documentation:
 
 SOCKIT - Transparent SOCKS 5 support for TCPSocket
 
-* Author: Zachary Patten <zachary@jovelabs.net>
+* Author: Zachary Patten <zachary AT jovelabs DOT com> [![endorse](http://api.coderwall.com/zpatten/endorsecount.png)](http://coderwall.com/zpatten)
 * Copyright: Copyright (c) Zachary Patten
 * License: Apache License, Version 2.0
 
