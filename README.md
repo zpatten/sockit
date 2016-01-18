@@ -75,7 +75,7 @@ Once configured you can simply do something along these lines:
 
     socket = TCPSocket.new('github.com', '22')
     data = socket.gets
-    expect(data).to match(/SSH/)
+    puts data.inspect
 
 And everything will be magically routed via your configured SOCKS server.
 
