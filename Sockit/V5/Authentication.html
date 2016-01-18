@@ -296,9 +296,9 @@
   <span class='kw'>end</span>
 
   <span class='kw'>if</span> <span class='id identifier rubyid_server_auth_method'>server_auth_method</span> <span class='op'>==</span> <span class='int'>0xFF</span>
-    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>SockitError</span><span class='comma'>,</span> <span class='id identifier rubyid_authentication_method'>authentication_method</span><span class='lparen'>(</span><span class='id identifier rubyid_server_auth_method'>server_auth_method</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>SockitError</span><span class='comma'>,</span> <span class='id identifier rubyid_build_v5_authentication_method_message'>build_v5_authentication_method_message</span><span class='lparen'>(</span><span class='id identifier rubyid_server_auth_method'>server_auth_method</span><span class='rparen'>)</span>
   <span class='kw'>else</span>
-    <span class='id identifier rubyid_log'>log</span><span class='lparen'>(</span><span class='symbol'>:green</span><span class='comma'>,</span> <span class='id identifier rubyid_authentication_method'>authentication_method</span><span class='lparen'>(</span><span class='id identifier rubyid_server_auth_method'>server_auth_method</span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_log'>log</span><span class='lparen'>(</span><span class='symbol'>:green</span><span class='comma'>,</span> <span class='id identifier rubyid_build_v5_authentication_method_message'>build_v5_authentication_method_message</span><span class='lparen'>(</span><span class='id identifier rubyid_server_auth_method'>server_auth_method</span><span class='rparen'>)</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
 
   <span class='comment'># The subsequent authentication is method-dependent. Username and password authentication (method 0x02) is described in RFC 1929:
@@ -339,9 +339,9 @@
     <span class='id identifier rubyid_status_code'>status_code</span> <span class='op'>=</span> <span class='id identifier rubyid_auth_reply'>auth_reply</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
 
     <span class='kw'>if</span> <span class='id identifier rubyid_status_code'>status_code</span> <span class='op'>==</span> <span class='int'>0x00</span>
-      <span class='id identifier rubyid_log'>log</span><span class='lparen'>(</span><span class='symbol'>:green</span><span class='comma'>,</span> <span class='id identifier rubyid_authentication_status'>authentication_status</span><span class='lparen'>(</span><span class='id identifier rubyid_status_code'>status_code</span><span class='rparen'>)</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_log'>log</span><span class='lparen'>(</span><span class='symbol'>:green</span><span class='comma'>,</span> <span class='id identifier rubyid_build_v5_authentication_status_message'>build_v5_authentication_status_message</span><span class='lparen'>(</span><span class='id identifier rubyid_status_code'>status_code</span><span class='rparen'>)</span><span class='rparen'>)</span>
     <span class='kw'>else</span>
-      <span class='id identifier rubyid_raise'>raise</span> <span class='const'>SockitError</span><span class='comma'>,</span> <span class='id identifier rubyid_authentication_status'>authentication_status</span><span class='lparen'>(</span><span class='id identifier rubyid_status_code'>status_code</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='const'>SockitError</span><span class='comma'>,</span> <span class='id identifier rubyid_build_v5_authentication_status_message'>build_v5_authentication_status_message</span><span class='lparen'>(</span><span class='id identifier rubyid_status_code'>status_code</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
 
@@ -357,7 +357,7 @@
 </div>
 
     <div id="footer">
-  Generated on Sun Jan 17 18:27:08 2016 by
+  Generated on Sun Jan 17 19:44:00 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.3.0).
 </div>
