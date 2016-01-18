@@ -79,6 +79,9 @@ Once configured you can simply do something along these lines:
 
 And everything will be magically routed via your configured SOCKS server.
 
+## SS5
+
+I use SS5 for my SOCKS servers.  It works well and is easy to configure.  It is also the server which the specs run against on Travis CI.  You can see how it is compiled, configured and started as well as more the the Travis `before_install` script, https://github.com/zpatten/sockit/blob/master/spec/support/before_install.sh
 
 ## CONTRIBUTING
 
