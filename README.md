@@ -89,6 +89,14 @@ I await your pull request.
 
 # RESOURCES
 
+IRC:
+
+* #jovelabs on irc.freenode.net
+
+Documentation:
+
+* http://zpatten.github.io/sockit/
+
 Source:
 
 * https://github.com/zpatten/sockit
@@ -96,10 +104,6 @@ Source:
 Issues:
 
 * https://github.com/zpatten/sockit/issues
-
-Documentation:
-
-* http://zpatten.github.com/sockit/
 
 # LICENSE
 
