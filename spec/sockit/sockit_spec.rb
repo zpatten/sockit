@@ -62,9 +62,9 @@ describe TCPSocket do
 
     end
 
-    describe "socks" do
+    describe "SOCKS v5" do
 
-      it "should allow a socks 5 connection to github (no debug/no auth)" do
+      it "should allow a SOCKS v5 connection to github (no debug/no auth)" do
         Sockit.config do |config|
           config.debug = false
           config.version = 5
@@ -79,7 +79,7 @@ describe TCPSocket do
         expect(data).to match(/SSH/)
       end
 
-      it "should allow a socks 5 connection to github (debug/no auth)" do
+      it "should allow a SOCKS v5 connection to github (debug/no auth)" do
         $stdout = File.open('/dev/null', 'w')
 
         Sockit.config do |config|
@@ -96,12 +96,12 @@ describe TCPSocket do
         expect(data).to match(/SSH/)
       end
 
-      it "should allow a socks 5 connection to github (no debug/auth)" do
+      it "should allow a SOCKS v5 connection to github (no debug/auth)" do
         Sockit.config do |config|
           config.debug = false
           config.version = 5
           config.host = "127.0.0.1"
-          config.port = "1080"
+          config.port = "1081"
           config.username = "root"
           config.password = "none"
         end
@@ -111,14 +111,14 @@ describe TCPSocket do
         expect(data).to match(/SSH/)
       end
 
-      it "should allow a socks 5 connection to github (debug/auth)" do
+      it "should allow a SOCKS v5 connection to github (debug/auth)" do
         $stdout = File.open('/dev/null', 'w')
 
         Sockit.config do |config|
           config.debug = true
           config.version = 5
           config.host = "127.0.0.1"
-          config.port = "1080"
+          config.port = "1081"
           config.username = "root"
           config.password = "none"
         end

@@ -12,11 +12,19 @@ sudo make
 sudo make install
 
 sudo mkdir -p /etc/ss5/
+
 cat <<-EOF | sudo tee /etc/ss5/ss5.conf
 auth 0.0.0.0/0 - -
 permit - 0.0.0.0/0 - 0.0.0.0/0 - - - - -
 EOF
 
-sudo /usr/sbin/ss5 -t
+cat <<-EOF | sudo tee /etc/ss5/ss5-auth.conf
+auth 0.0.0.0/0 - u
+permit - 0.0.0.0/0 - 0.0.0.0/0 - - - - -
+EOF
+
+sudo SS5_SOCKS_PORT=1080 SS5_CONFIG_FILE=/etc/ss5/ss5.conf /usr/sbin/ss5 -t -u root
+sudo SS5_SOCKS_PORT=1081 SS5_CONFIG_FILE=/etc/ss5/ss5-auth.conf SS5_PASSWORD_FILE=/etc/ss5/ss5.passwd /usr/sbin/ss5 -t -u root
 
 nc -w 3 127.0.0.1 1080
+nc -w 3 127.0.0.1 1081

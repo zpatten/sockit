@@ -68,10 +68,10 @@ module Sockit
         # field 5: password
         data = Array.new
         data << [0x01].pack("C*")
-        data << [socks.username.length.to_i].pack("C*")
-        data << socks.username
-        data << [socks.password.length.to_i].pack("C*")
-        data << socks.password
+        data << [config.username.length.to_i].pack("C*")
+        data << config.username
+        data << [config.password.length.to_i].pack("C*")
+        data << config.password
         data = data.flatten.join
 
         log(:yellow, "Sending username and password")
