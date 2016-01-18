@@ -38,6 +38,54 @@ describe Sockit do
       expect(subject.config.port).to eq "1080"
     end
 
+    it "should report as configured when it is" do
+      Sockit.config.version = 5
+      Sockit.config.host = "127.0.0.1"
+      Sockit.config.port = "1080"
+
+      expect(Sockit.is_configured?).to eq true
+    end
+
+    it "should not report as configured when it is not" do
+      Sockit.config.version = 5
+      Sockit.config.host = "127.0.0.1"
+      Sockit.config.port = ""
+
+      expect(Sockit.is_configured?).to eq false
+    end
+
+    it "should report as SOCKS v5 when configured as such" do
+      Sockit.config.version = 5
+      Sockit.config.host = "127.0.0.1"
+      Sockit.config.port = "1080"
+
+      expect(Sockit.is_socks_v5?).to eq true
+    end
+
+    it "should not report as SOCKS v5 when configured as such" do
+      Sockit.config.version = 5
+      Sockit.config.host = ""
+      Sockit.config.port = "1080"
+
+      expect(Sockit.is_socks_v5?).to eq false
+    end
+
+    it "should report as SOCKS v4 when configured as such" do
+      Sockit.config.version = 4
+      Sockit.config.host = "127.0.0.1"
+      Sockit.config.port = "1080"
+
+      expect(Sockit.is_socks_v4?).to eq true
+    end
+
+    it "should not report as SOCKS v4 when configured as such" do
+      Sockit.config.version = 4
+      Sockit.config.host = ""
+      Sockit.config.port = "1080"
+
+      expect(Sockit.is_socks_v4?).to eq false
+    end
+
   end
 
 end
@@ -63,6 +111,21 @@ describe TCPSocket do
     end
 
     describe "SOCKS v5" do
+
+      it "should allow a SOCKS v4 connection to github (no debug/no auth)" do
+        Sockit.config do |config|
+          config.debug = false
+          config.version = 4
+          config.host = "127.0.0.1"
+          config.port = "1080"
+          config.username = nil
+          config.password = nil
+        end
+
+        socket = TCPSocket.new('github.com', '22')
+        data = socket.gets
+        expect(data).to match(/SSH/)
+      end
 
       it "should allow a SOCKS v5 connection to github (no debug/no auth)" do
         Sockit.config do |config|

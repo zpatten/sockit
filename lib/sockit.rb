@@ -23,8 +23,15 @@ require 'resolv'
 require 'ostruct'
 
 require 'sockit/version'
-require 'sockit/authentication'
-require 'sockit/connect'
+
+require 'sockit/v4/connection'
+require 'sockit/v4/support'
+
+require 'sockit/v5/authentication'
+require 'sockit/v5/connection'
+require 'sockit/v5/support'
+
+require 'sockit/connection'
 require 'sockit/support'
 
 class SockitError < RuntimeError; end
@@ -64,8 +71,14 @@ module Sockit
     end
   end
 
-  extend Sockit::Authentication
-  extend Sockit::Connect
+  extend Sockit::V5::Authentication
+  extend Sockit::V5::Connection
+  extend Sockit::V5::Support
+
+  extend Sockit::V4::Connection
+  extend Sockit::V4::Support
+
+  extend Sockit::Connection
   extend Sockit::Support
 end
 
@@ -75,8 +88,8 @@ class TCPSocket
   def initialize(remote_host, remote_port, local_host=nil, local_port=nil)
     if Sockit.connect_via_socks?(remote_host)
       initialize_tcp(Sockit.config.host, Sockit.config.port)
-      (Sockit.config.version.to_i == 5) and Sockit.authenticate(self)
-      Sockit.config.host and Sockit.connect(self, remote_host, remote_port)
+      Sockit.perform_v5_authenticate(self) if Sockit.is_socks_v5?
+      Sockit.connect(self, remote_host, remote_port)
     else
       Sockit.direct_connect(self, remote_host, remote_port, local_host, local_port)
     end
