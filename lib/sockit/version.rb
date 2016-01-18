@@ -21,7 +21,7 @@
 module Sockit
 
   unless const_defined?(:VERSION)
-    VERSION = "1.0.6"
+    VERSION = "1.0.7"
   end
 
 end
