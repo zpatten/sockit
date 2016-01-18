@@ -34,8 +34,8 @@ describe Sockit do
       expect(subject.config.debug).to eq false
       expect(subject.config.username).to eq nil
       expect(subject.config.password).to eq nil
-      expect(subject.config.host).to eq "127.0.0.1"
-      expect(subject.config.port).to eq "1080"
+      expect(subject.config.host).to eq nil
+      expect(subject.config.port).to eq nil
     end
 
     it "should report as configured when it is" do

@@ -40,9 +40,7 @@ module Sockit
   DEFAULT_CONFIG = {
     :version => 5,
     :ignore  => %w( 127.0.0.1 ),
-    :debug   => false,
-    :host    => "127.0.0.1",
-    :port    => "1080"
+    :debug   => false
   }
 
   COLORS = {

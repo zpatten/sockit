@@ -32,36 +32,36 @@ You can configure on the singleton class or an instance of the class.  The SOCKS
 
 The defaults are as follows:
 
-    TCPSocket.socks do |socks|
-      socks.version = 5
-      socks.ignore = ["127.0.0.1"]
-      socks.debug = false
+    Sockit.config do |config|
+      config.version = 5
+      config.ignore = ["127.0.0.1"]
+      config.debug = false
     end
 
 Specify your SOCKS server and port:
 
-    TCPSocket.socks do |socks|
-      socks.host = "127.0.0.1"
-      socks.port = "1080"
+    Sockit.config do |config|
+      config.host = "127.0.0.1"
+      config.port = "1080"
     end
 
 If you want to use username/password authentication:
 
-    TCPSocket.socks do |socks|
-      socks.username = "username"
-      socks.password = "password"
+    Sockit.config do |config|
+      config.username = "username"
+      config.password = "password"
     end
 
 Turn on debug output:
 
-    TCPSocket.socks do |socks|
-      socks.debug = true
+    Sockit.config do |config|
+      config.debug = true
     end
 
 Ignore some more hosts:
 
-    TCPSocket.socks do |socks|
-      socks.ignore << "192.168.0.1"
+    Sockit.config do |config|
+      config.ignore << "192.168.0.1"
     end
 
 
