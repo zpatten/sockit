@@ -6,18 +6,18 @@
 <title>
   File: README
   
-    &mdash; Documentation by YARD 0.8.2.1
+    &mdash; Documentation by YARD 0.8.7.6
   
 </title>
 
-  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
 
-  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
   hasFrames = window.top.frames.main ? true : false;
   relpath = '';
-  framesUrl = "frames.html#!" + escape(window.location.href);
+  framesUrl = "frames.html#!file.README.html";
 </script>
 
 
@@ -61,29 +61,40 @@
 
     <iframe id="search_frame"></iframe>
 
-    <div id="content"><div id='filecontents'><p><a href="http://travis-ci.org/zpatten/sockit"><img src="https://secure.travis-ci.org/zpatten/sockit.png" alt="Build Status"></a>
+    <div id="content"><div id='filecontents'><p><a href="http://badge.fury.io/rb/sockit"><img src="https://badge.fury.io/rb/sockit.png" alt="Gem Version"></a>
+<a href="http://travis-ci.org/zpatten/sockit"><img src="https://secure.travis-ci.org/zpatten/sockit.png" alt="Build Status"></a>
+<a href="https://coveralls.io/r/zpatten/sockit"><img src="https://coveralls.io/repos/zpatten/sockit/badge.png?branch=master" alt="Coverage Status"></a>
 <a href="https://gemnasium.com/zpatten/sockit"><img src="https://gemnasium.com/zpatten/sockit.png" alt="Dependency Status"></a>
 <a href="https://codeclimate.com/github/zpatten/sockit"><img src="https://codeclimate.com/github/zpatten/sockit.png" alt="Code Climate"></a></p>
 
 <h1>SOCKIT</h1>
 
-<p>Transparent SOCKS 5 support for TCPSocket</p>
+<p>Transparent SOCKS v4 and SOCKS v5 support for TCPSocket</p>
+
+<p>Seamlessly route all TCP traffic for you application through a SOCKS v4 or v5 server with nearly zero effort.  Once <code>require</code>&#39;d and configured all traffic leveraging the <code>TCPSocket</code> class will route via your configured SOCKS server.</p>
+
+<p>This is especially useful for many cases; here are a couple:</p>
+
+<ul>
+<li>Ensure all outbound traffic from your application appears from a single IP.</li>
+<li>Ensure development traffic does not give away private IP addresses.</li>
+</ul>
 
 <h2>INSTALLATION</h2>
 
 <p>Add this line to your application&#39;s Gemfile:</p>
 
-<pre class="code ruby"><code><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>sockit</span><span class='tstring_end'>'</span></span>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sockit</span><span class='tstring_end'>&#39;</span></span>
 </code></pre>
 
 <p>And then execute:</p>
 
-<pre class="code ruby"><code>$ bundle
+<pre class="code ruby"><code class="ruby">$ bundle
 </code></pre>
 
 <p>Or install it yourself as:</p>
 
-<pre class="code ruby"><code>$ gem install sockit
+<pre class="code ruby"><code class="ruby">$ gem install sockit
 </code></pre>
 
 <h2>USAGE</h2>
@@ -96,42 +107,55 @@
 
 <p>The defaults are as follows:</p>
 
-<pre class="code ruby"><code><span class='const'>TCPSocket</span><span class='period'>.</span><span class='id identifier rubyid_socks'>socks</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_socks'>socks</span><span class='op'>|</span>
-  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_version'>version</span> <span class='op'>=</span> <span class='int'>5</span>
-  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_ignore'>ignore</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>127.0.0.1</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='op'>=</span> <span class='kw'>false</span>
+<pre class="code ruby"><code class="ruby"><span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_config'>config</span><span class='op'>|</span>
+  <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_version'>version</span> <span class='op'>=</span> <span class='int'>5</span>
+  <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_ignore'>ignore</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>127.0.0.1</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='op'>=</span> <span class='kw'>false</span>
 <span class='kw'>end</span>
 </code></pre>
 
 <p>Specify your SOCKS server and port:</p>
 
-<pre class="code ruby"><code><span class='const'>TCPSocket</span><span class='period'>.</span><span class='id identifier rubyid_socks'>socks</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_socks'>socks</span><span class='op'>|</span>
-  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>127.0.0.1</span><span class='tstring_end'>&quot;</span></span>
-  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_port'>port</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1080</span><span class='tstring_end'>&quot;</span></span>
+<pre class="code ruby"><code class="ruby"><span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_config'>config</span><span class='op'>|</span>
+  <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>127.0.0.1</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_port'>port</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1080</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span>
 </code></pre>
 
 <p>If you want to use username/password authentication:</p>
 
-<pre class="code ruby"><code><span class='const'>TCPSocket</span><span class='period'>.</span><span class='id identifier rubyid_socks'>socks</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_socks'>socks</span><span class='op'>|</span>
-  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_username'>username</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>username</span><span class='tstring_end'>&quot;</span></span>
-  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_password'>password</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>password</span><span class='tstring_end'>&quot;</span></span>
+<pre class="code ruby"><code class="ruby"><span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_config'>config</span><span class='op'>|</span>
+  <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_username'>username</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>username</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_password'>password</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>password</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span>
 </code></pre>
 
 <p>Turn on debug output:</p>
 
-<pre class="code ruby"><code><span class='const'>TCPSocket</span><span class='period'>.</span><span class='id identifier rubyid_socks'>socks</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_socks'>socks</span><span class='op'>|</span>
-  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='op'>=</span> <span class='kw'>true</span>
+<pre class="code ruby"><code class="ruby"><span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_config'>config</span><span class='op'>|</span>
+  <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='op'>=</span> <span class='kw'>true</span>
 <span class='kw'>end</span>
 </code></pre>
 
 <p>Ignore some more hosts:</p>
 
-<pre class="code ruby"><code><span class='const'>TCPSocket</span><span class='period'>.</span><span class='id identifier rubyid_socks'>socks</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_socks'>socks</span><span class='op'>|</span>
-  <span class='id identifier rubyid_socks'>socks</span><span class='period'>.</span><span class='id identifier rubyid_ignore'>ignore</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>192.168.0.1</span><span class='tstring_end'>&quot;</span></span>
+<pre class="code ruby"><code class="ruby"><span class='const'>Sockit</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_config'>config</span><span class='op'>|</span>
+  <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_ignore'>ignore</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>192.168.0.1</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span>
 </code></pre>
+
+<p>Once configured you can simply do something along these lines:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_socket'>socket</span> <span class='op'>=</span> <span class='const'>TCPSocket</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>github.com</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>22</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='id identifier rubyid_socket'>socket</span><span class='period'>.</span><span class='id identifier rubyid_gets'>gets</span>
+<span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span>
+</code></pre>
+
+<p>And everything will be magically routed via your configured SOCKS server.</p>
+
+<h2>SS5</h2>
+
+<p>I use SS5 for my SOCKS servers.  It works well and is easy to configure.  It is also the server which the specs run against on Travis CI.  You can see how it is compiled, configured and started as well as more the the Travis <code>before_install</code> script, <a href="https://github.com/zpatten/sockit/blob/master/spec/support/before_install.sh">https://github.com/zpatten/sockit/blob/master/spec/support/before_install.sh</a></p>
 
 <h2>CONTRIBUTING</h2>
 
@@ -162,7 +186,7 @@
 <p>SOCKIT - Transparent SOCKS 5 support for TCPSocket</p>
 
 <ul>
-<li>Author: Zachary Patten <a href="mailto:zachary@jovelabs.net">zachary@jovelabs.net</a></li>
+<li>Author: Zachary Patten <zachary AT jovelabs DOT com> <a href="http://coderwall.com/zpatten"><img src="http://api.coderwall.com/zpatten/endorsecount.png" alt="endorse"></a></li>
 <li>Copyright: Copyright (c) Zachary Patten</li>
 <li>License: Apache License, Version 2.0</li>
 </ul>
@@ -171,7 +195,7 @@
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at</p>
 
-<pre class="code ruby"><code><span class='id identifier rubyid_http'>http</span><span class='symbol'>:/</span><span class='op'>/</span><span class='id identifier rubyid_www'>www</span><span class='period'>.</span><span class='id identifier rubyid_apache'>apache</span><span class='period'>.</span><span class='id identifier rubyid_org'>org</span><span class='op'>/</span><span class='id identifier rubyid_licenses'>licenses</span><span class='op'>/</span><span class='const'>LICENSE</span><span class='op'>-</span><span class='float'>2.0</span>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_http'>http</span><span class='symbol'>:/</span><span class='op'>/</span><span class='id identifier rubyid_www'>www</span><span class='period'>.</span><span class='id identifier rubyid_apache'>apache</span><span class='period'>.</span><span class='id identifier rubyid_org'>org</span><span class='op'>/</span><span class='id identifier rubyid_licenses'>licenses</span><span class='op'>/</span><span class='const'>LICENSE</span><span class='op'>-</span><span class='float'>2.0</span>
 </code></pre>
 
 <p>Unless required by applicable law or agreed to in writing, software
@@ -182,9 +206,9 @@ limitations under the License.</p>
 </div></div>
 
     <div id="footer">
-  Generated on Sun Mar 31 00:20:52 2013 by
+  Generated on Sun Jan 17 18:08:06 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.2.1 (ruby-1.9.3).
+  0.8.7.6 (ruby-2.3.0).
 </div>
 
   </body>

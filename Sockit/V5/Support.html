@@ -1,0 +1,421 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: Sockit::V5::Support
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../';
+  framesUrl = "../../frames.html#!Sockit/V5/Support.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (S)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Sockit.html" title="Sockit (module)">Sockit</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../V5.html" title="Sockit::V5 (module)">V5</a></span></span>
+     &raquo; 
+    <span class="title">Support</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: Sockit::V5::Support
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><span class='object_link'><a href="../../Sockit.html" title="Sockit (module)">Sockit</a></span></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/sockit/v5/support.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#authentication_method-instance_method" title="#authentication_method (instance method)">- (Object) <strong>authentication_method</strong>(auth_method) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>The authentication methods supported are numbered as follows: 0x00: No authentication 0x01: GSSAPI[10] 0x02: Username/Password[11] 0x03-0x7F: methods assigned by IANA[12] 0x80-0xFE: methods reserved for private use.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#authentication_status-instance_method" title="#authentication_status (instance method)">- (Object) <strong>authentication_status</strong>(auth_status) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>0x00 = success any other value = failure, connection must be closed.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#build_v5_result_code_message-instance_method" title="#build_v5_result_code_message (instance method)">- (Object) <strong>build_v5_result_code_message</strong>(result_code) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>0x00 = request granted 0x01 = general failure 0x02 = connection not allowed by ruleset 0x03 = network unreachable 0x04 = host unreachable 0x05 = connection refused by destination host 0x06 = TTL expired 0x07 = command not supported / protocol error 0x08 = address type not supported.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="authentication_method-instance_method">
+  
+    - (<tt>Object</tt>) <strong>authentication_method</strong>(auth_method) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>The authentication methods supported are numbered as follows:
+0x00: No authentication
+0x01: GSSAPI[10]
+0x02: Username/Password[11]
+0x03-0x7F: methods assigned by IANA[12]
+0x80-0xFE: methods reserved for private use</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sockit/v5/support.rb', line 50</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_authentication_method'>authentication_method</span><span class='lparen'>(</span><span class='id identifier rubyid_auth_method'>auth_method</span><span class='rparen'>)</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_auth_method'>auth_method</span>
+  <span class='kw'>when</span> <span class='int'>0x00</span> <span class='kw'>then</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>No authentication (Code: 0x%02X)</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='id identifier rubyid_auth_method'>auth_method</span>
+  <span class='kw'>when</span> <span class='int'>0x01</span> <span class='kw'>then</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>GSSAPI authentication (Code: 0x%02X)</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='id identifier rubyid_auth_method'>auth_method</span>
+  <span class='kw'>when</span> <span class='int'>0x02</span> <span class='kw'>then</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Username/Password authentication (Code: 0x%02X)</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='id identifier rubyid_auth_method'>auth_method</span>
+  <span class='kw'>when</span> <span class='int'>0x03</span><span class='op'>..</span><span class='int'>0x7F</span> <span class='kw'>then</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Authentication method assigned by IANA (Code: 0x%02X)</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='id identifier rubyid_auth_method'>auth_method</span>
+  <span class='kw'>when</span> <span class='int'>0x80</span><span class='op'>..</span><span class='int'>0xFE</span> <span class='kw'>then</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Authentication method reserved for private use (Code: 0x%02X)</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='id identifier rubyid_auth_method'>auth_method</span>
+  <span class='kw'>when</span> <span class='int'>0xFF</span> <span class='kw'>then</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Unsupported authentication (Code: 0x%02X)</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='id identifier rubyid_auth_method'>auth_method</span>
+  <span class='kw'>else</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Unknown authentication (Code: 0x%02X)</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='id identifier rubyid_auth_method'>auth_method</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="authentication_status-instance_method">
+  
+    - (<tt>Object</tt>) <strong>authentication_status</strong>(auth_status) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>0x00 = success
+any other value = failure, connection must be closed</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+71
+72
+73
+74
+75
+76
+77
+78</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sockit/v5/support.rb', line 71</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_authentication_status'>authentication_status</span><span class='lparen'>(</span><span class='id identifier rubyid_auth_status'>auth_status</span><span class='rparen'>)</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_auth_status'>auth_status</span>
+  <span class='kw'>when</span> <span class='int'>0x00</span> <span class='kw'>then</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Authentication success (Code: 0x%02X)</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='id identifier rubyid_auth_status'>auth_status</span>
+  <span class='kw'>else</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Authentication failure (Code: 0x%02X)</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='id identifier rubyid_auth_status'>auth_status</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="build_v5_result_code_message-instance_method">
+  
+    - (<tt>Object</tt>) <strong>build_v5_result_code_message</strong>(result_code) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>0x00 = request granted
+0x01 = general failure
+0x02 = connection not allowed by ruleset
+0x03 = network unreachable
+0x04 = host unreachable
+0x05 = connection refused by destination host
+0x06 = TTL expired
+0x07 = command not supported / protocol error
+0x08 = address type not supported</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sockit/v5/support.rb', line 14</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_build_v5_result_code_message'>build_v5_result_code_message</span><span class='lparen'>(</span><span class='id identifier rubyid_result_code'>result_code</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_message'>message</span> <span class='op'>=</span> <span class='kw'>case</span> <span class='id identifier rubyid_result_code'>result_code</span>
+  <span class='kw'>when</span> <span class='int'>0x00</span> <span class='kw'>then</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Request granted</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>when</span> <span class='int'>0x01</span> <span class='kw'>then</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>General failure</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>when</span> <span class='int'>0x02</span> <span class='kw'>then</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Connection not allowed by ruleset</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>when</span> <span class='int'>0x03</span> <span class='kw'>then</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Network unreachable</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>when</span> <span class='int'>0x04</span> <span class='kw'>then</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Host unreachable</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>when</span> <span class='int'>0x05</span> <span class='kw'>then</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Connection refused by destination host</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>when</span> <span class='int'>0x06</span> <span class='kw'>then</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>TTL expired</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>when</span> <span class='int'>0x07</span> <span class='kw'>then</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Command not supported / Protocol error</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>when</span> <span class='int'>0x08</span> <span class='kw'>then</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Address type not supported</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>else</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Unknown</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%s (Code: 0x%02X)</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='lbracket'>[</span><span class='id identifier rubyid_message'>message</span><span class='comma'>,</span> <span class='id identifier rubyid_result_code'>result_code</span><span class='rbracket'>]</span>
+
+<span class='kw'>rescue</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Result Code: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_result_code'>result_code</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Sun Jan 17 18:08:06 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.3.0).
+</div>
+
+  </body>
+</html>
