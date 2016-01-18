@@ -6,7 +6,14 @@
 
 # SOCKIT
 
-Transparent SOCKS 5 support for TCPSocket
+Transparent SOCKS v4 and SOCKS v5 support for TCPSocket
+
+Seamlessly route all TCP for you application through a SOCKS server with nearly zero effort.  Once `require`'d and configured all traffic leveraging the `TCPSocket` class will route via your configured SOCKS server.
+
+This is especially useful for many cases; here are a couple:
+
+- Ensure all outbound traffic from your application appears from a single IP.
+- Ensure development traffic does not give away private IP addresses.
 
 ## INSTALLATION
 
