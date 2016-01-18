@@ -26,8 +26,8 @@ Gem::Specification.new do |spec|
   spec.version       = Sockit::VERSION
   spec.authors       = %(Zachary Patten)
   spec.email         = [ %(zachary AT jovelabs DOT com) ]
-  spec.description   = %(Transparent SOCKS 5 support for TCPSocket)
-  spec.summary       = %(Transparent SOCKS 5 support for TCPSocket)
+  spec.description   = %(Transparent SOCKS v4 and SOCKS v5 support for TCPSocket)
+  spec.summary       = %(Transparent SOCKS v4 and SOCKS v5 support for TCPSocket)
   spec.homepage      = %(https://github.com/zpatten/sockit)
   spec.license       = "Apache 2.0"
 
