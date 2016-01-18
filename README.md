@@ -71,6 +71,14 @@ Ignore some more hosts:
       config.ignore << "192.168.0.1"
     end
 
+Once configured you can simply do something along these lines:
+
+    socket = TCPSocket.new('github.com', '22')
+    data = socket.gets
+    expect(data).to match(/SSH/)
+
+And everything will be magically routed via your configured SOCKS server.
+
 
 ## CONTRIBUTING
 
