@@ -47,34 +47,44 @@ module Sockit
       # 0x02: Username/Password[11]
       # 0x03-0x7F: methods assigned by IANA[12]
       # 0x80-0xFE: methods reserved for private use
-      def authentication_method(auth_method)
-        case auth_method
+      def build_v5_authentication_method_message(auth_method)
+        message = case auth_method
         when 0x00 then
-          "No authentication (Code: 0x%02X)" % auth_method
+          "No authentication"
         when 0x01 then
-          "GSSAPI authentication (Code: 0x%02X)" % auth_method
+          "GSSAPI authentication"
         when 0x02 then
-          "Username/Password authentication (Code: 0x%02X)" % auth_method
+          "Username/Password authentication"
         when 0x03..0x7F then
-          "Authentication method assigned by IANA (Code: 0x%02X)" % auth_method
+          "Authentication method assigned by IANA"
         when 0x80..0xFE then
-          "Authentication method reserved for private use (Code: 0x%02X)" % auth_method
+          "Authentication method reserved for private use"
         when 0xFF then
-          "Unsupported authentication (Code: 0x%02X)" % auth_method
+          "Unsupported authentication"
         else
-          "Unknown authentication (Code: 0x%02X)" % auth_method
+          "Unknown authentication"
         end
+
+        "%s (Method: 0x%02X)" % [message, auth_method]
+
+      rescue
+        "Authentication Method: #{auth_method.inspect}"
       end
 
       # 0x00 = success
       # any other value = failure, connection must be closed
-      def authentication_status(auth_status)
-        case auth_status
+      def build_v5_authentication_status_message(auth_status)
+        message = case auth_status
         when 0x00 then
-          "Authentication success (Code: 0x%02X)" % auth_status
+          "Authentication success"
         else
-          "Authentication failure (Code: 0x%02X)" % auth_status
+          "Authentication failure"
         end
+
+        "%s (Status: 0x%02X)" % [message, auth_status]
+
+      rescue
+        "Authentication Status: #{auth_status.inspect}"
       end
 
     end

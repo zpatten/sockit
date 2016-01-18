@@ -48,9 +48,9 @@ module Sockit
         end
 
         if server_auth_method == 0xFF
-          raise SockitError, authentication_method(server_auth_method)
+          raise SockitError, build_v5_authentication_method_message(server_auth_method)
         else
-          log(:green, authentication_method(server_auth_method))
+          log(:green, build_v5_authentication_method_message(server_auth_method))
         end
 
         # The subsequent authentication is method-dependent. Username and password authentication (method 0x02) is described in RFC 1929:
@@ -91,9 +91,9 @@ module Sockit
           status_code = auth_reply[1]
 
           if status_code == 0x00
-            log(:green, authentication_status(status_code))
+            log(:green, build_v5_authentication_status_message(status_code))
           else
-            raise SockitError, authentication_status(status_code)
+            raise SockitError, build_v5_authentication_status_message(status_code)
           end
         end
 
