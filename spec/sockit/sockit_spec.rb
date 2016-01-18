@@ -128,6 +128,19 @@ describe TCPSocket do
         expect(data).to match(/SSH/)
       end
 
+      it "should throw an exception if we use bad credentials (no debug/auth)" do
+        Sockit.config do |config|
+          config.debug = false
+          config.version = 5
+          config.host = "127.0.0.1"
+          config.port = "1081"
+          config.username = "root"
+          config.password = "blargh"
+        end
+
+        expect { TCPSocket.new('github.com', '22') }.to raise_exception(SockitError)
+      end
+
     end
 
   end
