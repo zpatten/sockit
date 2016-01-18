@@ -18,65 +18,24 @@
 #
 ################################################################################
 
+require 'rake/clean'
+
 require 'bundler/gem_tasks'
 
-################################################################################
-
 require 'rspec/core/rake_task'
-RSpec::Core::RakeTask.new(:spec)
-task :default => :spec
-task :test => :spec
+RSpec::Core::RakeTask.new(:spec) do |t|
+  t.rspec_opts = %w(--format JUnit --out vendor/reports/junit/test-results.xml --format html --out vendor/reports/html/test-results.html --format documentation)
+end
+
+require 'coveralls/rake/task'
+Coveralls::RakeTask.new
+
+require 'ztk/rake/docs'
 
 ################################################################################
 
-desc "Run RSpec with code coverage"
-task :coverage do
-  `rake spec COVERAGE=true`
-  case RUBY_PLATFORM
-  when /darwin/
-    `open coverage/index.html`
-  when /linux/
-    `google-chrome coverage/index.html`
-  end
-end
-
-################################################################################
-
-require 'yard'
-require 'yard/rake/yardoc_task'
-
-GEM_NAME = File.basename(Dir.pwd)
-DOC_PATH = File.expand_path(File.join("..", "/", "#{GEM_NAME}.doc"))
-
-namespace :doc do
-  YARD::Rake::YardocTask.new(:pages) do |t|
-
-    # t.files = ['lib/**/*.rb']
-    t.options = ['--verbose', '-o', DOC_PATH]
-  end
-
-  namespace :pages do
-
-    desc 'Generate and publish YARD Documentation to GitHub pages'
-    task :publish => ['doc:pages'] do
-      describe = %x(git describe).chomp
-      stats = %x(bundle exec yard stats).chomp
-
-      commit_message = Array.new
-      commit_message << "Generated YARD Documentation for #{GEM_NAME.upcase} #{describe}\n\n"
-      commit_message << stats
-
-      Dir.chdir(DOC_PATH) do
-        puts(%x{git add -Av})
-        puts(%x{git commit -m"#{commit_message.join}"})
-        puts(%x{git push origin gh-pages})
-      end
-    end
-
-  end
-
-end
-desc 'Alias to doc:yard'
-task 'doc' => 'doc:yard'
+task :coveralls => [:spec, 'coveralls:push']
+task :default => [:spec]
+task :test => [:spec]
 
 ################################################################################
