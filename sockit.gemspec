@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
   spec.name          = "sockit"
   spec.version       = Sockit::VERSION
   spec.authors       = %(Zachary Patten)
-  spec.email         = [ %(zachary AT jovelabs DOT com) ]
+  spec.email         = [ %(zpatten AT jovelabs DOT io) ]
   spec.description   = %(Seamlessly route all TCP traffic for you application through a SOCKS v4 or v5 server with nearly zero effort.  Once required and configured all traffic leveraging the TCPSocket class will route via your configured SOCKS server.)
   spec.summary       = %(Transparent SOCKS v4 and SOCKS v5 support for TCPSocket)
   spec.homepage      = %(https://github.com/zpatten/sockit)
@@ -38,16 +38,16 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 2.0.0'
 
-  spec.add_development_dependency("pry")
-  spec.add_development_dependency("rake")
-  spec.add_development_dependency("rspec")
-  spec.add_development_dependency("yard")
-  spec.add_development_dependency("redcarpet")
   spec.add_development_dependency("codeclimate-test-reporter")
   spec.add_development_dependency("coveralls")
-  spec.add_development_dependency("yarjuf")
+  spec.add_development_dependency("pry")
+  spec.add_development_dependency("rake")
+  spec.add_development_dependency("redcarpet")
+  spec.add_development_dependency("rspec")
   spec.add_development_dependency("simplecov-rcov")
   spec.add_development_dependency("travis")
   spec.add_development_dependency("websocket-native")
+  spec.add_development_dependency("yard")
+  spec.add_development_dependency("yarjuf")
   spec.add_development_dependency("ztk")
 end
