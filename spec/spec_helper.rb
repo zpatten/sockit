@@ -18,19 +18,15 @@
 #
 ################################################################################
 require 'simplecov'
-require 'simplecov-rcov'
-################################################################################
 require "codeclimate-test-reporter"
-CodeClimate::TestReporter.start
-################################################################################
 require 'coveralls'
-Coveralls.wear!
-################################################################################
+
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
   [
     SimpleCov::Formatter::HTMLFormatter,
     SimpleCov::Formatter::RcovFormatter,
-    Coveralls::SimpleCov::Formatter
+    Coveralls::SimpleCov::Formatter,
+    CodeClimate::TestReporter::Formatter
   ]
 )
 SimpleCov.start
