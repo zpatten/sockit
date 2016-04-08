@@ -97,6 +97,11 @@
 <pre class="code ruby"><code class="ruby">$ gem install sockit
 </code></pre>
 
+<p>Then run the pry console to play with it:</p>
+
+<pre class="code ruby"><code class="ruby">$ bundle exec sockit
+</code></pre>
+
 <h2>USAGE</h2>
 
 <p>By loading the gem TCPSocket will get monkey patched adding seamless transparent SOCKS proxy support.  I favor using SS5 for a SOCKS server, so at this point I&#39;m uncertain of absolute compatibility with other SOCKS servers.  I&#39;m following the RFC here; so if (insert other SOCKS server flavor here) follows the RFC everything is in theory compatible.</p>
@@ -161,6 +166,14 @@
 
 <p>I await your pull request.</p>
 
+<h1>RUBIES TESTED AGAINST</h1>
+
+<ul>
+<li>Ruby 2.0.0</li>
+<li>Ruby 2.2.4</li>
+<li>Ruby 2.3.0</li>
+</ul>
+
 <h1>RESOURCES</h1>
 
 <p>IRC:</p>
@@ -212,7 +225,7 @@ limitations under the License.</p>
 </div></div>
 
     <div id="footer">
-  Generated on Fri Apr  8 00:20:25 2016 by
+  Generated on Fri Apr  8 00:25:54 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.3.0).
 </div>
