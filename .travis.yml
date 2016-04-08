@@ -5,12 +5,12 @@ rvm:
   - 2.3.0
 branches:
   only:
-  - master
+    - master
 before_install:
-- "./spec/support/before_install.sh"
+  - "./spec/support/before_install.sh"
 notifications:
   irc:
     channels:
-    - "irc.freenode.net#jovelabs"
+      - "irc.freenode.net#jovelabs"
     use_notice: true
     skip_join: true
