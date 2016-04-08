@@ -26,10 +26,10 @@ require 'yarjuf'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
   [
-    SimpleCov::Formatter::HTMLFormatter,
-    SimpleCov::Formatter::RcovFormatter,
+    CodeClimate::TestReporter::Formatter,
     Coveralls::SimpleCov::Formatter,
-    CodeClimate::TestReporter::Formatter
+    SimpleCov::Formatter::HTMLFormatter,
+    SimpleCov::Formatter::RcovFormatter
   ]
 )
 
