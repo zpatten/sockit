@@ -29,6 +29,10 @@ Or install it yourself as:
 
     $ gem install sockit
 
+Then run the pry console to play with it:
+
+    $ bundle exec sockit
+
 ## USAGE
 
 By loading the gem TCPSocket will get monkey patched adding seamless transparent SOCKS proxy support.  I favor using SS5 for a SOCKS server, so at this point I'm uncertain of absolute compatibility with other SOCKS servers.  I'm following the RFC here; so if (insert other SOCKS server flavor here) follows the RFC everything is in theory compatible.
@@ -86,6 +90,12 @@ I use SS5 for my SOCKS servers.  It works well and is easy to configure.  It is 
 ## CONTRIBUTING
 
 I await your pull request.
+
+# RUBIES TESTED AGAINST
+
+* Ruby 2.0.0
+* Ruby 2.2.4
+* Ruby 2.3.0
 
 # RESOURCES
 
