@@ -17,6 +17,8 @@
 #   limitations under the License.
 #
 ################################################################################
+
+require 'yarjuf'
 require 'simplecov'
 require "codeclimate-test-reporter"
 require 'coveralls'
@@ -29,9 +31,9 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
     CodeClimate::TestReporter::Formatter
   ]
 )
+
 SimpleCov.start
-################################################################################
-require 'yarjuf'
+
 ################################################################################
 
 require 'tempfile'
