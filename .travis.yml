@@ -14,6 +14,3 @@ notifications:
     - "irc.freenode.net#jovelabs"
     use_notice: true
     skip_join: true
-addons:
-    code_climate:
-        repo_token: 5bfff36fe2faa17f9251e2e5cebc5b7fb277fa58f49e6d84451f8a1a0329da0d
