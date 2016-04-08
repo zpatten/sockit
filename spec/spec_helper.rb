@@ -18,10 +18,11 @@
 #
 ################################################################################
 
-require 'yarjuf'
-require 'simplecov'
-require "codeclimate-test-reporter"
+require 'codeclimate-test-reporter'
 require 'coveralls'
+require 'simplecov'
+require 'simplecov-rcov'
+require 'yarjuf'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
   [
