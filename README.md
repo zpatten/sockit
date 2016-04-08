@@ -1,6 +1,6 @@
 [![Gem Version](https://badge.fury.io/rb/sockit.png)](http://badge.fury.io/rb/sockit)
 [![Build Status](https://secure.travis-ci.org/zpatten/sockit.png)](http://travis-ci.org/zpatten/sockit)
-[![Coverage Status](https://coveralls.io/repos/zpatten/sockit/badge.png?branch=master)](https://coveralls.io/r/zpatten/sockit)
+[![Coverage Status](https://coveralls.io/repos/github/zpatten/sockit/badge.png?branch=master)](https://coveralls.io/github/zpatten/sockit?branch=master)
 [![Dependency Status](https://gemnasium.com/zpatten/sockit.png)](https://gemnasium.com/zpatten/sockit)
 [![Code Climate](https://codeclimate.com/github/zpatten/sockit.png)](https://codeclimate.com/github/zpatten/sockit)
 
