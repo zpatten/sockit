@@ -2,9 +2,9 @@ module Sockit
   module Connection
 
     def direct_connect(socket, remote_host, remote_port, local_host=nil, local_port=nil)
-      log(:yellow, "Directly connecting to #{remote_host}:#{remote_port}")
+      Sockit.enabled? and log(:yellow, "Directly connecting to #{remote_host}:#{remote_port}")
       socket.__send__(:initialize_tcp, remote_host, remote_port, local_host=nil, local_port=nil)
-      log(:green, "Connected to #{remote_host}:#{remote_port}")
+      Sockit.enabled? and log(:green, "Connected to #{remote_host}:#{remote_port}")
     end
 
     def connect(socket, host, port)

@@ -69,6 +69,18 @@ module Sockit
     end
   end
 
+  def enabled
+    @@enabled ||= false
+  end
+
+  def enable
+    @@enabled = true
+  end
+
+  def disable
+    @@enabled = false
+  end
+
   extend Sockit::V5::Authentication
   extend Sockit::V5::Connection
   extend Sockit::V5::Support
@@ -83,8 +95,9 @@ end
 class TCPSocket
 
   alias :initialize_tcp :initialize
+
   def initialize(remote_host, remote_port, local_host=nil, local_port=nil)
-    if Sockit.connect_via_socks?(remote_host)
+    if Sockit.enabled? && Sockit.connect_via_socks?(remote_host)
       initialize_tcp(Sockit.config.host, Sockit.config.port)
       Sockit.perform_v5_authenticate(self) if Sockit.is_socks_v5?
       Sockit.connect(self, remote_host, remote_port)
@@ -92,4 +105,5 @@ class TCPSocket
       Sockit.direct_connect(self, remote_host, remote_port, local_host, local_port)
     end
   end
+
 end
