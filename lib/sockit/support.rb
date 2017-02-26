@@ -36,6 +36,14 @@ module Sockit
       puts("%s%s.%06d %s%s" % [COLORS[color], timestamp.strftime("%Y-%m-%d|%H:%M:%S"), timestamp.usec, message, COLORS[:reset]])
     end
 
+    def resolve(host)
+      # when doing proxy mode on SS5; we seemingly need to resolve all names first.
+      if host !~ /^(\d+)\.(\d+)\.(\d+)\.(\d+)$/
+        host = Resolv::DNS.new.getaddress(host).to_s
+      end
+      host
+    end
+
     def dump(action, data)
       return if !config.debug
 

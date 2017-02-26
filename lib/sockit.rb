@@ -97,7 +97,7 @@ class TCPSocket
   alias :initialize_tcp :initialize
 
   def initialize(remote_host, remote_port, local_host=nil, local_port=nil)
-    if Sockit.enabled? && Sockit.connect_via_socks?(remote_host)
+    if Sockit.enabled? && Sockit.connect_via_socks?(Sockit.resolve(remote_host))
       initialize_tcp(Sockit.config.host, Sockit.config.port)
       Sockit.perform_v5_authenticate(self) if Sockit.is_socks_v5?
       Sockit.connect(self, remote_host, remote_port)

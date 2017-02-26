@@ -11,9 +11,7 @@ module Sockit
       log(:yellow, "Connecting to SOCKS v#{config.version} server #{config.host}:#{config.port}")
 
       # when doing proxy mode on SS5; we seemingly need to resolve all names first.
-      if host !~ /^(\d+)\.(\d+)\.(\d+)\.(\d+)$/
-        host = Resolv::DNS.new.getaddress(host).to_s
-      end
+      host = Sockit.resolve(host)
 
       data = case config.version.to_i
       when 4 then
