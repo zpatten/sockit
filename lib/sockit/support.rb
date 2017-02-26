@@ -18,7 +18,7 @@ module Sockit
     end
 
     def connect_via_socks?(host)
-      (is_configured? && !config.ignore.flatten.any?{ |ignored_host| host =~ /#{ignored_host}/ }
+      (is_configured? && !config.ignore.flatten.any?{ |ignored_host| host =~ /#{ignored_host}/ })
     end
 
     def is_socks_v5?
