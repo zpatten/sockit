@@ -69,15 +69,15 @@ module Sockit
     end
   end
 
-  def enabled
+  def self.enabled?
     @@enabled ||= false
   end
 
-  def enable
+  def self.enable
     @@enabled = true
   end
 
-  def disable
+  def self.disable
     @@enabled = false
   end
 
